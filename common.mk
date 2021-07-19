@@ -358,6 +358,10 @@ PRODUCT_ODM_PROPERTIES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
+# LMK
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.lmk.filecache_min_kb=153600
+
 # Logging
 SPAMMY_LOG_TAGS := \
     MiStcImpl \

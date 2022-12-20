@@ -3,8 +3,10 @@
 # ADSP
 vendor/bin/adsprpcd
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc
+vendor/lib/libtinycompress.so
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
+vendor/lib64/libtinycompress.so
 
 # Audio FX modules
 system_ext/etc/permissions/audiosphere.xml

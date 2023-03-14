@@ -51,5 +51,13 @@ on property:vendor.post_boot.parsed=1
     write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu0/cpuidle/state1/disable 0
 
+    # Screen off ratelimitsAdd commentMore actions
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us_screen_off 2000
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us_screen_off 2000
+    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us_screen_off 2000
+    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us_screen_off 2000
+    write /sys/devices/system/cpu/cpu7/cpufreq/schedutil/up_rate_limit_us_screen_off 2000
+    write /sys/devices/system/cpu/cpu7/cpufreq/schedutil/down_rate_limit_us_screen_off 2000
+
 on property:dalvik.vm.heapstartsize=16
    write /proc/sys/vm/watermark_boost_factor 0

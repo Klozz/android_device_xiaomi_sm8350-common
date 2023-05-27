@@ -67,6 +67,10 @@ on init
     chown system system /sys/devices/platform/soc/1d84000.ufshc/auto_hibern8
     chmod 0660 /sys/devices/platform/soc/1d84000.ufshc/auto_hibern8
 
+    # Fingerprint goodix
+    chmod 0666 /dev/goodix_fp
+    chown system system /dev/goodix_fp
+
 on early-fs
     start vold
     exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules/ cnss2

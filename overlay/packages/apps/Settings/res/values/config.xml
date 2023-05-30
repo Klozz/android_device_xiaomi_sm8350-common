@@ -62,4 +62,6 @@
         <item>259</item>
         <item>260</item>
     </integer-array>
+
+    <integer name="config_vibration_supported_intensity_levels">3</integer>
 </resources>

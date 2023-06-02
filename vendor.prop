@@ -157,6 +157,7 @@ ro.crypto.dm_default_key.options_format.version=2
 ro.crypto.volume.metadata.method=dm-default-key
 
 # Dalvik dex2oat
+persist.sys.dalvik.multithread=true
 dalvik.vm.dex2oat64.enabled=true
 pm.dexopt.bg-dexopt=everything
 pm.dexopt.first-boot=quicken

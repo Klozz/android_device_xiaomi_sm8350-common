@@ -147,6 +147,9 @@ vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 # Consumer IR
 vendor/lib64/hw/consumerir.lahaina.so
 
+# Data - LA.UM.9.14.r1-19300.01-LAHAINA.QSSI12.0
+vendor/bin/netmgrd|4254e808131fa3a13aec1474bb769dbd539379ff
+
 # Diag HAL
 -vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
 vendor/bin/diag-router
@@ -810,7 +813,10 @@ system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/app/IWlanService/IWlanService.apk
 vendor/bin/ATFWD-daemon
 vendor/bin/adpl
+<<<<<<< HEAD
 vendor/bin/hw/qcrilNrd
+=======
+>>>>>>> 5c26a1e (sm8350-common: Pin netmgrd taken from LAHAINA-19300)
 vendor/bin/pd-mapper
 vendor/bin/port-bridge
 vendor/bin/qti
@@ -902,9 +908,6 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
-
-# Ril Netmgrd - from miui_LISAGlobal_V14.0.2.0.TKOMIXM
-vendor/bin/netmgrd|40d5498b821478c8bb3dfe10cc2caa1c73f75dff
 
 # Secure element
 vendor/bin/hw/vendor.qti.secure_element@1.2-service

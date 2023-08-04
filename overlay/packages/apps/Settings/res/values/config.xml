@@ -64,4 +64,7 @@
     </integer-array>
 
     <integer name="config_vibration_supported_intensity_levels">3</integer>
+
+    <!-- Whether to enable Lineage Fast Charge Preference -->
+    <bool name="config_lineageFastChargeSupported">true</bool>
 </resources>

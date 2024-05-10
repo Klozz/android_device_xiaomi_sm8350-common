@@ -98,10 +98,8 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 TARGET_KERNEL_ADDITIONAL_FLAGS := TARGET_PRODUCT=$(PRODUCT_DEVICE)
 #TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-yuki
-TARGET_KERNEL_CLANG_VERSION := 22
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_LLVM_BINUTILS := true
-TARGET_KERNEL_NO_GCC := false
+KERNEL_CC := CC=clang
+TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8350
 TARGET_KERNEL_CONFIG := vendor/lahaina-qgki_defconfig vendor/debugfs.config vendor/xiaomi_QGKI.config vendor/Yuki_QGKI.config
 

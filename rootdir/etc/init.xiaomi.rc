@@ -18,3 +18,5 @@ on property:vendor.post_boot.parsed=1
     write /proc/sys/kernel/sched_lib_name "com.miHoYo., com.activision., UnityMain, libunity.so, libil2cpp.so, libfb.so"
     write /proc/sys/kernel/sched_lib_mask_force 240
 
+on property:dalvik.vm.heapstartsize=16
+   write /proc/sys/vm/watermark_boost_factor 0

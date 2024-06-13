@@ -166,6 +166,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
     libdisplayconfig.system.qti \
+    libgui_vendor \
     libqdMetaData \
     libqdMetaData.system \
     memtrack.default

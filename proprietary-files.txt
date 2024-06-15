@@ -190,6 +190,7 @@ vendor/lib64/libdisplayfeature.so
 vendor/lib64/libdisplayfeatureservice.so
 vendor/lib64/libmi-stc-HW-modulate.so
 vendor/lib64/libtinyxml.so
+vendor/lib64/libmiXmlParser.so
 vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so
 
 # DPM

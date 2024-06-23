@@ -666,3 +666,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     libpng.vendor
+
+# WiFi firmware symlinks
+PRODUCT_PACKAGES += \
+    firmware_WCNSS_qcom_cfg.ini_symlink

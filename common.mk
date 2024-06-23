@@ -17,6 +17,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Inherit proprietary targets
 $(call inherit-product, vendor/xiaomi/sm8350-common/sm8350-common-vendor.mk)
 
+# Add common definitions for Qualcomm
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
+
 # Setup dalvik vm configs
 PRODUCT_VENDOR_PROPERTIES += \
     dalvik.vm.heapstartsize=16m \

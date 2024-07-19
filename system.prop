@@ -8,6 +8,9 @@ vendor.bluetooth.soc=hastings
 # CNE
 persist.vendor.cne.feature=1
 
+# Dalvik
+dalvik.vm.dex2oat64.enabled=true
+
 # Disable Skia tracing by default
 debug.hwui.skia_atrace_enabled=false
 
@@ -92,3 +95,7 @@ ro.config.sdha_apps_bg_min=8
 
 #Evita que se desactive la carga previa de bibliotecas gráficas
 ro.zygote.disable_gl_preload=false
+
+# perf
+ro.hwui.max_texture_allocation_size=209715200
+persist.device_config.runtime_native_boot.iorap_perfetto_enable=true

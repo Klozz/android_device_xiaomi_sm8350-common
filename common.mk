@@ -137,6 +137,8 @@ PRODUCT_PACKAGES += \
     Aperture \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
+    android.hardware.graphics.common-V4-ndk.vendor \
+    libjpeg.vendor \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
@@ -346,6 +348,11 @@ PRODUCT_ENABLE_UFFD_GC := false
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor
+
+# Launcher3
+PRODUCT_ODM_PROPERTIES += \
+    persist.sys.default_launcher=0 \
+    persist.sys.quickswitch_pixel_shipped=0
 
 # Lineage Health
 PRODUCT_PACKAGES += \

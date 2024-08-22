@@ -1,1 +1,2 @@
 hal_client_domain(vendor_dpmd, vendor_hal_diaghal);
+allow vendor_dpmd vendor_hal_diaghal_hwservice:hwservice_manager find;

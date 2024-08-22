@@ -99,3 +99,6 @@ ro.zygote.disable_gl_preload=false
 # perf
 ro.hwui.max_texture_allocation_size=209715200
 persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
+
+
+ro.product.mod_device=redwood_global

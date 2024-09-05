@@ -20,6 +20,8 @@ $(call inherit-product, vendor/xiaomi/sm8350-common/sm8350-common-vendor.mk)
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
+PRODUCT_EXTRA_VNDK_VERSIONS := 30 31 32 33
+
 # Setup dalvik vm configs
 PRODUCT_VENDOR_PROPERTIES += \
     dalvik.vm.heapstartsize=16m \

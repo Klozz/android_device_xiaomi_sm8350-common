@@ -114,6 +114,3 @@ ro.product.mod_device=redwood_global
 
 vendor.media.target_variant=_yupik_v1
 vendor.netflix.bsp_rev=Q7325-SPY-33758-1
-
-# USB name
-vendor.usb.product_string=${ro.product.marketname}

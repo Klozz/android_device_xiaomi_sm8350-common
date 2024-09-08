@@ -404,13 +404,6 @@ endif
 # Media
 PRODUCT_PACKAGES += \
     libcodec2_soft_common.vendor \
-    libmm-omxcore \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxCore \
-    libOmxEvrcEnc \
-    libOmxG711Enc \
-    libOmxQcelp13Enc \
     libopus.vendor \
     libstagefrighthw \
     libstagefright_amrnb_common.vendor \
@@ -478,10 +471,7 @@ PRODUCT_PACKAGES += \
     libcodec2_hidl@1.1.vendor \
     libcodec2_soft_common.vendor \
     libcodec2_vndk.vendor \
-    libsfplugin_ccodec_utils.vendor \
-    libstagefright_softomx_plugin \
-    libstagefright_softomx_plugin.vendor \
-    libstagefright_softomx.vendor
+    libsfplugin_ccodec_utils.vendor
 
 # Native libraries whitelist
 PRODUCT_COPY_FILES += \

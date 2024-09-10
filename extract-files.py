@@ -81,6 +81,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('IGNORED_IRQ=27,23,38', 'IGNORED_IRQ=27,23,38,115,332'),
     ('vendor/lib/c2.dolby.client.so', 'vendor/lib64/c2.dolby.client.so'): blob_fixup()
         .add_needed('dolbycodec_shim.so'),
+    ('vendor/lib64/mediadrm/libwvdrmengine.so', 'vendor/lib64/libwvhidl.so'): blob_fixup()
+        .add_needed('libcrypto_shim.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

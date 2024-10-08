@@ -5,4 +5,4 @@ type hal_xiaomi_camera_hwservice, hwservice_manager_type;
 type vendor_hal_poweroptservice_hwservice, hwservice_manager_type, protected_hwservice;
 
 # dpmd
-type vendor_hal_diaghal_hwservice, hwservice_manager_type;
+#type vendor_hal_diaghal_hwservice, hwservice_manager_type;

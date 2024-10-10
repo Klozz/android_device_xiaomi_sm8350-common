@@ -18,6 +18,7 @@ init.svc.vendor.displayfeature-hal-1-0                u:object_r:vendor_displayf
 persist.vendor.sec.fastchg_enabled              u:object_r:vendor_fastcharge_prop:s0
 
 # Fingerprint
+persist.vendor.fingerprint.                           u:object_r:vendor_fp_prop:s0
 persist.vendor.sys.fp.    u:object_r:vendor_fp_prop:s0
 persist.vendor.sys.fp.info    u:object_r:vendor_fp_info_prop:s0
 persist.vendor.sys.fp.uid    u:object_r:vendor_fp_info_prop:s0

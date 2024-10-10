@@ -1,3 +1,6 @@
 set_prop(vendor_init, vendor_displayfeature_prop)
 set_prop(vendor_init, build_prop)
 set_prop(vendor_init, vendor_ssr_prop)
+
+# Allow vendor init to set fingerprint property
+set_prop(vendor_init, vendor_fp_prop)

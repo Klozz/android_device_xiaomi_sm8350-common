@@ -162,6 +162,11 @@ persist.vendor.dpm.idletimer.mode=default
 persist.vendor.dpm.nsrm.bkg.evt=3955
 persist.vendor.dpmhalservice.enable=1
 
+# Fingerprint aidl
+persist.vendor.fingerprint.type=side
+persist.vendor.fingerprint.sensor_location=1080|990|200|local:4630946711218184577
+persist.vendor.fingerprint.sensor_modules=fpc,goodix
+
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 

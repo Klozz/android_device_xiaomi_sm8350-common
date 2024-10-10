@@ -587,6 +587,10 @@ PRODUCT_PACKAGES += \
     libjsoncpp.vendor \
     libsqlite.vendor
 
+# Shim
+PRODUCT_PACKAGES += \
+    libui_shim
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \

@@ -90,6 +90,7 @@ function blob_fixup() {
             ;;
         vendor/lib/libcodec2_vndk_vendor.so)
             "${PATCHELF}" --set-soname "libcodec2_vndk_vendor.so" "${2}"
+	    "${PATCHELF}" --add-needed "libui_shim.so"  "${2}"
             ;;
         vendor/lib/c2.dolby.client.so)
             "${PATCHELF}" --replace-needed "libcodec2_vndk.so" "libcodec2_vndk_vendor.so" "${2}"

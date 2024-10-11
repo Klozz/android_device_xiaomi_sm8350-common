@@ -589,7 +589,8 @@ PRODUCT_PACKAGES += \
 
 # Shim
 PRODUCT_PACKAGES += \
-    libui_shim
+    libui_shim \
+    libui_shim.vendor
 
 # Sensors
 PRODUCT_PACKAGES += \

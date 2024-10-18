@@ -24,8 +24,8 @@
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
 
-using vendor::lineage::fastcharge::V1_0::IFastCharge;
-using vendor::lineage::fastcharge::V1_0::implementation::FastCharge;
+using vendor::xperience::fastcharge::V1_0::IFastCharge;
+using vendor::xperience::fastcharge::V1_0::implementation::FastCharge;
 
 using android::OK;
 using android::status_t;

@@ -71,4 +71,8 @@
     <string name="config_batteryDesignCapacity">/sys/class/power_supply/battery/charge_full_design</string>
     <string name="config_batteryChargeCycles">/sys/class/power_supply/battery/cycle_count</string>
     <bool name="config_supportBatteryHealth">true</bool>
+
+    <!-- Indicates whether device has a side mounted fingerprint sensor,
+    but a dedicated one, i.e. not embedded in the power button. -->
+    <bool name="config_is_side_fps" translatable="false">true</bool>
 </resources>

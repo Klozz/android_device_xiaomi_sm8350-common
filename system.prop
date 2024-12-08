@@ -109,3 +109,5 @@ ro.product.mod_device=redwood_global
 
 vendor.media.target_variant=_yupik_v1
 vendor.netflix.bsp_rev=Q7325-SPY-33758-1
+
+ro.xpe.chipset=Snapdragon® 778G

@@ -18,6 +18,9 @@ dalvik.vm.dex2oat-threads=8
 # Disable Skia tracing by default
 debug.hwui.skia_atrace_enabled=false
 
+# FEAS
+ro.feas.enable=true
+
 # Graphics
 debug.sf.disable_backpressure=1
 debug.sf.enable_hwc_vds=1

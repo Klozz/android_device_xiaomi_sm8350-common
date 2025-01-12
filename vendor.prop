@@ -165,6 +165,8 @@ persist.vendor.dpmhalservice.enable=1
 # Fingerprint aidl
 ro.vendor.fingerprint.type=side
 ro.vendor.fingerprint.sensor_location=1080|990|200|local:4630946711218184577
+persist.vendor.fingerprint.type=side
+persist.vendor.fingerprint.sensor_location=1080|990|200|local:4630946711218184577
 
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp

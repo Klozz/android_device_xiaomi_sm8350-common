@@ -367,10 +367,10 @@ vendor/lib64/vendor.qti.gnss@4.0.so
 vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
 
 # Graphics (Adreno) - from AOSPA
-vendor/lib/libkcl.so | abb2a89beb36b5c9412cb84a2dacbc05
-vendor/lib/libkernelmanager.so | 34fb1ef82a7d2b43640cacc51c89e422
-vendor/lib64/libkcl.so | fd376542f0081dec302c73e374556fc4
-vendor/lib64/libkernelmanager.so | f9e2d973ad6e41b18b17a3fb745283c2
+#vendor/lib/libkcl.so | abb2a89beb36b5c9412cb84a2dacbc05
+#vendor/lib/libkernelmanager.so | 34fb1ef82a7d2b43640cacc51c89e422
+#vendor/lib64/libkcl.so | fd376542f0081dec302c73e374556fc4
+#vendor/lib64/libkernelmanager.so | f9e2d973ad6e41b18b17a3fb745283c2
 
 # Graphics (Adreno) - from Adreno v805 from oculus
 vendor/lib/egl/eglSubDriverAndroid.so
@@ -745,6 +745,15 @@ vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 # QCV
 vendor/bin/init.qti.qcv.sh
 vendor/etc/init/init.qti.qcv.rc
+
+# qspm
+vendor/bin/vendor.qti.qspmhal@1.0-service
+vendor/etc/init/vendor.qti.qspmhal@1.0-service.rc
+vendor/etc/seccomp_policy/qspm.policy
+vendor/lib/vendor.qti.qspmhal@1.0-impl.so
+vendor/lib/vendor.qti.qspmhal@1.0.so
+vendor/lib64/vendor.qti.qspmhal@1.0-impl.so
+vendor/lib64/vendor.qti.qspmhal@1.0.so
 
 # QMI
 vendor/bin/irsc_util

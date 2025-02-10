@@ -5,6 +5,6 @@ allow vendor_hal_perf_default hal_fingerprint_default:file r_file_perms;
 allow vendor_hal_perf_default hal_camera_default:dir r_dir_perms;
 
 allow vendor_hal_perf_default sysfs:file r_file_perms;
-set_property(vendor_hal_perf_default, ctl_stop_prop);
-set_property(vendor_hal_perf_default, ctl_start_prop);
-set_property(vendor_hal_perf_default, vendor_msm_irqbalance_prop);
+allow vendor_hal_perf_default ctl_stop_prop:property_service set;
+allow vendor_hal_perf_default ctl_start_prop:property_service set;
+allow vendor_hal_perf_default vendor_msm_irqbalance_prop:property_service set;

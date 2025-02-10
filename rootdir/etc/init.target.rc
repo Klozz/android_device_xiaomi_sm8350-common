@@ -193,6 +193,10 @@ on boot
     chown system system /sys/class/mi_display/disp-DSI-1/dynamic_fps
     chmod 0444 /sys/class/mi_display/disp-DSI-1/dynamic_fps
 
+    #chown/chmod input_suspend node
+    chown system system /sys/class/qcom-battery/input_suspend
+    chmod 774 /sys/class/qcom-battery/input_suspend
+
 on init && property:ro.boot.mode=charger
     mount_all /vendor/etc/charger_fstab.qcom --early
     write /sys/kernel/boot_adsp/boot 1

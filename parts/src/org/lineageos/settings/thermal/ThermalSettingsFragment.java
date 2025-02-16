@@ -1,5 +1,6 @@
 /**
  * Copyright (C) 2020-2024 The LineageOS Project
+ * Copyright (C) 2020-2025 The XPerience Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +38,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceFragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -51,7 +52,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ThermalSettingsFragment extends PreferenceFragmentCompat
+public class ThermalSettingsFragment extends PreferenceFragment
         implements ApplicationsState.Callbacks {
 
     private AllPackagesAdapter mAllPackagesAdapter;
@@ -223,6 +224,7 @@ public class ThermalSettingsFragment extends PreferenceFragmentCompat
         private ImageView icon;
         private View rootView;
         private ImageView stateIcon;
+        private ImageView touchIcon;
 
         private ViewHolder(View view) {
             super(view);
@@ -230,6 +232,7 @@ public class ThermalSettingsFragment extends PreferenceFragmentCompat
             this.mode = view.findViewById(R.id.app_mode);
             this.icon = view.findViewById(R.id.app_icon);
             this.stateIcon = view.findViewById(R.id.state);
+            this.touchIcon = view.findViewById(R.id.touch);
             this.rootView = view;
 
             view.setTag(this);
@@ -325,6 +328,14 @@ public class ThermalSettingsFragment extends PreferenceFragmentCompat
             holder.mode.setAdapter(new ModeAdapter(context));
             holder.mode.setOnItemSelectedListener(this);
 
+            //Touch stuff
+            holder.touchIcon.setOnClickListener(v -> {
+                Intent intent = new Intent(getActivity(), TouchSettingsActivity.class);
+                intent.putExtra("appName", entry.label);
+                intent.putExtra("packageName", entry.info.packageName);
+                startActivity(intent);
+            });
+
             holder.title.setText(entry.label);
             holder.title.setOnClickListener(v -> holder.mode.performClick());
 
@@ -334,6 +345,12 @@ public class ThermalSettingsFragment extends PreferenceFragmentCompat
             int packageState = mThermalUtils.getStateForPackage(entry.info.packageName);
             holder.mode.setSelection(packageState, false);
             holder.mode.setTag(entry);
+            if (packageState == ThermalUtils.STATE_BENCHMARK ||
+                packageState == ThermalUtils.STATE_GAMING) {
+                holder.touchIcon.setVisibility(View.VISIBLE);
+            } else {
+                holder.touchIcon.setVisibility(View.INVISIBLE);
+            }
             holder.stateIcon.setImageResource(getStateDrawable(packageState));
         }
 

@@ -49,7 +49,7 @@ public final class ThermalUtils {
     private static final String THERMAL_STATE_BROWSER = "11";
     private static final String THERMAL_STATE_CAMERA = "12";
     private static final String THERMAL_STATE_DIALER = "8";
-    private static final String THERMAL_STATE_GAMING = "9";
+    private static final String THERMAL_STATE_GAMING = "0";
     private static final String THERMAL_STATE_NAVIGATION = "19";
     private static final String THERMAL_STATE_STREAMING = "14";
     private static final String THERMAL_STATE_VIDEO = "21";

@@ -1,4 +1,6 @@
 # All unpinned blobs below are extracted from haydn V816.0.1.0.UKKCNXM
+# Current blobs with ELF checks disabled:
+# libOmxVideoDSMode depends on libOmxCore, which is a gnu makefile target
 
 # ADSP
 vendor/bin/adsprpcd
@@ -813,10 +815,7 @@ system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/app/IWlanService/IWlanService.apk
 vendor/bin/ATFWD-daemon
 vendor/bin/adpl
-<<<<<<< HEAD
 vendor/bin/hw/qcrilNrd
-=======
->>>>>>> 5c26a1e (sm8350-common: Pin netmgrd taken from LAHAINA-19300)
 vendor/bin/pd-mapper
 vendor/bin/port-bridge
 vendor/bin/qti

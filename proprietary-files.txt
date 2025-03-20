@@ -153,7 +153,7 @@ vendor/lib64/hw/consumerir.lahaina.so
 vendor/bin/netmgrd|4254e808131fa3a13aec1474bb769dbd539379ff
 
 # Diag HAL
--vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
+vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
 vendor/bin/diag-router
 vendor/etc/init/vendor.qti.diag.rc
 vendor/lib64/vendor.qti.diaghal@1.0.so;MODULE_SUFFIX=_vendor
@@ -586,7 +586,6 @@ vendor/bin/nv_mac
 # OMX
 vendor/lib/libstagefright_soft_aacdec.so
 vendor/lib/libstagefright_soft_amrdec.so
-vendor/lib/libstagefright_soft_amrdec.so
 vendor/lib/libstagefright_soft_flacdec.so
 vendor/lib/libstagefright_soft_g711dec.so
 vendor/lib/libstagefright_soft_gsmdec.so
@@ -711,20 +710,19 @@ vendor/lib/libpasrutils.so
 vendor/lib/libqti-iopd-client.so
 vendor/lib/libqti-iopd.so
 vendor/lib/vendor.qti.hardware.iop@1.0.so
-vendor/lib/vendor.qti.hardware.iop@2.0.so
+vendor/lib/vendor.qti.hardware.iop@2.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/libpasrutils.so
 vendor/lib64/libadaptlaunch.so
 vendor/lib64/libappclassifier.so
 vendor/lib64/liblmutils-ns.so
 vendor/lib64/libmemperfd.so
 vendor/lib64/libmeters-ns.so
-vendor/lib64/libpasrutils.so
 vendor/lib64/libprekill.so
 vendor/lib64/libqti-iopd-client.so
 vendor/lib64/libqti-iopd.so
 vendor/lib64/libsplh.so
 vendor/lib64/vendor.qti.hardware.iop@1.0.so
-vendor/lib64/vendor.qti.hardware.iop@2.0.so
+vendor/lib64/vendor.qti.hardware.iop@2.0.so;MODULE_SUFFIX=_vendor
 
 # Perf LM
 vendor/etc/lm/AdaptLaunchFeature.xml
@@ -759,9 +757,9 @@ vendor/bin/vendor.qti.qspmhal@1.0-service
 vendor/etc/init/vendor.qti.qspmhal@1.0-service.rc
 vendor/etc/seccomp_policy/qspm.policy
 vendor/lib/vendor.qti.qspmhal@1.0-impl.so
-vendor/lib/vendor.qti.qspmhal@1.0.so
+vendor/lib/vendor.qti.qspmhal@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.qspmhal@1.0-impl.so
-vendor/lib64/vendor.qti.qspmhal@1.0.so
+vendor/lib64/vendor.qti.qspmhal@1.0.so;MODULE_SUFFIX=_vendor
 
 # QMI
 vendor/bin/irsc_util

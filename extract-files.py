@@ -9,6 +9,7 @@ from extract_utils.fixups_blob import (
     blob_fixups_user_type,
 )
 from extract_utils.fixups_lib import (
+    lib_fixup_remove,
     lib_fixups,
     lib_fixups_user_type,
 )
@@ -41,6 +42,8 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.wifidisplaysession@1.0',
         'vendor.qti.imsrtpservice@3.0',
         'vendor.qti.diaghal@1.0',
+        'vendor.qti.hardware.iop@2.0',
+        'vendor.qti.qspmhal@1.0',
     ): lib_fixup_vendor_suffix,
     (
         'libOmxCore',
@@ -70,7 +73,9 @@ blob_fixups: blob_fixups_user_type = {
     ('vendor/lib64/libdlbdsservice.so', 'vendor/lib/libstagefright_soft_ac4dec.so', 'vendor/lib/libstagefright_soft_ddpdec.so'): blob_fixup()
         .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),
     'vendor/etc/seccomp_policy/atfwd@2.0.policy': blob_fixup()
-        .add_line_if_missing('gettid: 1')
+        .add_line_if_missing('gettid: 1'),
+    'vendor/etc/msm_irqbalance.conf': blob_fixup()
+        .replace_needed('IGNORED_IRQ=27,23,38', 'IGNORED_IRQ=27,23,38,115,332')
 }  # fmt: skip
 
 module = ExtractUtilsModule(

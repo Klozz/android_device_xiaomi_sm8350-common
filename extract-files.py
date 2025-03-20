@@ -45,7 +45,7 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.iop@2.0',
         'vendor.qti.qspmhal@1.0',
         'vendor.xiaomi.hardware.displayfeature@1.0',
-        'libstagefright_flacdec'
+        'libstagefright_flacdec',
     ): lib_fixup_vendor_suffix,
     (
         'libOmxCore',

@@ -392,7 +392,6 @@ vendor/lib/libadreno_app_profiles.so
 vendor/lib/libadreno_compiler_cl.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libCB.so
-vendor/lib/libdmabufheap.so;MODULE_SUFFIX=_vendor
 vendor/lib/libgsl.so
 vendor/lib/libkcl.so
 vendor/lib/libkernelmanager.so
@@ -412,7 +411,6 @@ vendor/lib64/libadreno_app_profiles.so
 vendor/lib64/libadreno_compiler_cl.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libCB.so
-vendor/lib64/libdmabufheap.so;MODULE_SUFFIX=_vendor
 vendor/lib64/libgsl.so
 vendor/lib64/libkcl.so
 vendor/lib64/libkernelmanager.so

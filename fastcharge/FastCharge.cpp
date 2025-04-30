@@ -27,7 +27,7 @@
 #include <iostream>
 
 namespace vendor {
-namespace xperience {
+namespace lineage {
 namespace fastcharge {
 namespace V1_0 {
 namespace implementation {
@@ -94,5 +94,5 @@ Return<bool> FastCharge::setEnabled(bool enable) {
 } // namespace implementation
 } // namespace V1_0
 } // namespace fastcharge
-} // namespace xperience
+} // namespace lineage
 } // namespace vendor

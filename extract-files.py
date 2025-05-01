@@ -78,7 +78,9 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/etc/seccomp_policy/atfwd@2.0.policy': blob_fixup()
         .add_line_if_missing('gettid: 1'),
     'vendor/etc/msm_irqbalance.conf': blob_fixup()
-        .replace_needed('IGNORED_IRQ=27,23,38', 'IGNORED_IRQ=27,23,38,115,332')
+        .replace_needed('IGNORED_IRQ=27,23,38', 'IGNORED_IRQ=27,23,38,115,332'),
+    ('vendor/lib/c2.dolby.client.so', 'vendor/lib64/c2.dolby.client.so'): blob_fixup()
+        .add_needed('dolbycodec_shim.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

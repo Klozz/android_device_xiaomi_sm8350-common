@@ -1,6 +1,8 @@
 # All unpinned blobs below are extracted from haydn V816.0.1.0.UKKCNXM
 # Current blobs with ELF checks disabled:
 # libOmxVideoDSMode depends on libOmxCore, which is a gnu makefile target
+# libc2d30_bltlib depends on intrinsic symbols which are difficult to shim like __aeabi_ul2d
+
 
 # ADSP
 vendor/bin/adsprpcd
@@ -428,8 +430,8 @@ vendor/lib64/libOpenCL.so
 vendor/lib64/libOpenCL_adreno.so
 
 # Possible REQUIRED
-vendor/lib/libc2d30_bltlib.so
-vendor/lib64/libc2d30_bltlib.so
+vendor/lib/libc2d30_bltlib.so;DISABLE_CHECKELF
+vendor/lib64/libc2d30_bltlib.so;DISABLE_CHECKELF
 #vendor/lib/libgpudataproducer.so|2f3348614ea21ed4548154d0ab52ca2256d28e80
 #vendor/lib/libpvr.so|a1f1896b9f50223a9285d3496b8f9bcfa98d004d
 #vendor/lib64/libgpudataproducer.so|a2ebbc621637de0a63b5a6663b02575cb394fcda

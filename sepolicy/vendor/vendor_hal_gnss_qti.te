@@ -1,2 +1,0 @@
-allow vendor_hal_gnss_qti system_prop:file r_file_perms;
-

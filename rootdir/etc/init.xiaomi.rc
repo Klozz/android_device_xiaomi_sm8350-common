@@ -9,6 +9,10 @@ on boot
     chown system system /sys/class/qcom-battery/restrict_chg
     chmod 0666 /sys/class/qcom-battery/restrict_chg
 
+    # Setup ZRAM
+    write /sys/block/zram0/reset 1
+    write /sys/block/zram0/comp_algorithm lz4
+
 on property:vendor.post_boot.parsed=1
     # Setup dex2oat thread count and cpuset
     setprop dalvik.vm.dex2oat-cpu-set 0,1,2,3,4,5,6
@@ -20,6 +24,24 @@ on property:vendor.post_boot.parsed=1
 
     # Dynamically set IRQ affinity for KGSL and DRM
     exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.xiaomi_sm8350.sh
+
+    # Force GPU to stay in higher performance levels
+    write /sys/class/kgsl/kgsl-3d0/min_pwrlevel 2
+    write /sys/class/kgsl/kgsl-3d0/max_pwrlevel 0
+
+    # More aggressive on big cores
+    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us 85
+    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us 500
+    write /sys/devices/system/cpu/cpu7/cpufreq/schedutil/up_rate_limit_us 85
+    write /sys/devices/system/cpu/cpu7/cpufreq/schedutil/down_rate_limit_us 500
+
+    # Enable touch boost to improve sysui
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1036800 1:1036800"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 80
+
+    # Boostear foreground y top-app
+    write /dev/stune/top-app/schedtune.boost 1
+    write /dev/stune/foreground/schedtune.boost 1
 
 on property:dalvik.vm.heapstartsize=16
    write /proc/sys/vm/watermark_boost_factor 0

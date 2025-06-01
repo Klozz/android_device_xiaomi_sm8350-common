@@ -19,7 +19,7 @@ on property:vendor.post_boot.parsed=1
     setprop dalvik.vm.dex2oat-threads 6
 
     # optimize for some games
-    write /proc/sys/kernel/sched_lib_name "com.miHoYo., com.activision., UnityMain, libunity.so, libil2cpp.so, libfb.so"
+    write /proc/sys/kernel/sched_lib_name "audioserver, libaudioflinger.so, com.miHoYo., com.activision., UnityMain, libunity.so, libil2cpp.so, libfb.so"
     write /proc/sys/kernel/sched_lib_mask_force 240
 
     # Dynamically set IRQ affinity for KGSL and DRM
@@ -42,6 +42,14 @@ on property:vendor.post_boot.parsed=1
     # Boostear foreground y top-app
     write /dev/stune/top-app/schedtune.boost 1
     write /dev/stune/foreground/schedtune.boost 1
+
+    # Priorizar audio ensures top-app and audio go to bigs
+    write /dev/cpuset/foreground/cpus 4-7
+    write /dev/cpuset/top-app/cpus 4-7
+
+    # Prevents little cores from being suspended too fast
+    write /sys/devices/system/cpu/cpu0/online 1
+    write /sys/devices/system/cpu/cpu0/cpuidle/state1/disable 0
 
 on property:dalvik.vm.heapstartsize=16
    write /proc/sys/vm/watermark_boost_factor 0

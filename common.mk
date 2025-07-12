@@ -547,7 +547,12 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor
 
 # Perf
+PRODUCT_BOOT_JARS += \
+    QPerformance \
+    UxPerformance
+
 PRODUCT_PACKAGES += \
+    libpsi.vendor \
     libtflite \
     vendor.qti.hardware.perf@2.2 \
     vendor.qti.hardware.perf@2.2.vendor \
@@ -675,8 +680,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
 
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.xiaomi
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.touch@1.0-service.xiaomi
 
 # Ueventd
 PRODUCT_COPY_FILES += \

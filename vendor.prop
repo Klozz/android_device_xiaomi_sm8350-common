@@ -245,8 +245,17 @@ ro.vendor.nfc.repair=1
 ro.vendor.se.type=eSE,HCE,UICC
 
 # Perf
+ro.vendor.perf-hal.ver=2.2
 ro.vendor.extension_library=libqti-perfd-client.so
-ro.vendor.perf.scroll_opt=0
+ro.vendor.perf.scroll_opt=true
+ro.vendor.qspm.enable=true
+vendor.perf.framepacing.enable=1
+vendor.pasr.activemode.enabled=true
+ro.vendor.beluga.p=0x3
+ro.vendor.beluga.c=0x4800
+ro.vendor.beluga.s=0x900
+ro.vendor.beluga.t=0x240
+log.tag.vendor.qti.hardware.servicetrackeraidl-service=E
 
 # Radio
 keyguard.no_require_sim=true

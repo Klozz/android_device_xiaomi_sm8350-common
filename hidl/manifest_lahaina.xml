@@ -542,4 +542,9 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>MwqemAdapter</instance>
         </interface>
     </hal>
+    <hal format="aidl">
+        <name>vendor.qti.hardware.bluetooth.audio</name>
+        <version>1</version>
+        <fqname>IBluetoothAudioProviderFactory/default</fqname>
+    </hal>
 </manifest>

@@ -51,6 +51,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
          <instance>default</instance>
        </interface>
    </hal>
+   <!-- Qualcomm AIDL Bluetooth Audio HAL -->
+   <hal format="aidl" optional="true">
+       <name>vendor.qti.hardware.bluetooth.audio</name>
+       <interface>
+           <name>IBluetoothAudioProviderFactory</name>
+           <instance>default</instance>
+       </interface>
+   </hal>
    <hal format="aidl" optional="true">
         <name>android.hardware.cas</name>
         <version>1</version>

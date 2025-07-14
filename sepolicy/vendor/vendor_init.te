@@ -3,3 +3,7 @@ set_prop(vendor_init, vendor_ssr_prop)
 
 # Allow vendor init to set fingerprint property
 set_prop(vendor_init, vendor_fp_prop)
+
+# cgroups
+allow vendor_init cgroup:file getattr;
+allow vendor_init device:file rw_file_perms;

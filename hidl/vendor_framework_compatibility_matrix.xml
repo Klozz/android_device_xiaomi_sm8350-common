@@ -51,6 +51,13 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
          <instance>default</instance>
        </interface>
    </hal>
+    <hal format="hidl">
+        <name>android.hardware.bluetooth.audio</name>
+        <transport>hwbinder</transport>
+        <fqname>@2.0::IBluetoothAudioProvidersFactory/default</fqname>
+        <fqname>@2.1::IBluetoothAudioProvidersFactory/default</fqname>
+        <fqname>@2.2::IBluetoothAudioProvidersFactory/default</fqname>
+    </hal>
    <!-- Qualcomm AIDL Bluetooth Audio HAL -->
    <hal format="aidl" optional="true">
        <name>vendor.qti.hardware.bluetooth.audio</name>
@@ -1027,5 +1034,24 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <name>IQspmhal</name>
             <instance>default</instance>
         </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.bluetooth.audio</name>
+        <transport>hwbinder</transport>
+        <version>2.0-2</version>
+        <interface>
+            <name>IBluetoothAudioProvidersFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+     <hal format="hidl" optional="true">
+        <name>android.hardware.bluetooth.a2dp</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IBluetoothAudioOffload</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IBluetoothAudioOffload/default</fqname>
     </hal>
 </compatibility-matrix>

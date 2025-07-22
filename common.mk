@@ -141,6 +141,11 @@ PRODUCT_COPY_FILES += \
 # Get non-open-source specific aspects.
 $(call inherit-product-if-exists, vendor/qcom/common/system/bt/bt-vendor.mk)
 
+# Bluetooth A2DP Offload disable
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.a2dp_offload.disabled=true \
+    persist.bluetooth.disable_a2dp_offload=true
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080

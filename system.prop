@@ -1,5 +1,6 @@
 # Bluetooth
 vendor.bluetooth.soc=hastings
+persist.vendor.qcom.bluetooth.soc=hastings
 
 # CNE
 persist.vendor.cne.feature=1

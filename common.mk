@@ -666,6 +666,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
        ro.audio.spatializer_transaural_enabled_default=false \
        persist.vendor.audio.spatializer.speaker_enabled=true
 
+# service tracker
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.servicetrackeraidl
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \

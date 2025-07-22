@@ -112,6 +112,7 @@ PRODUCT_PACKAGES += \
 $(call soong_config_set,qssi_bluetooth,enable_delay_in_ms,true)
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
+    liba2dpoffload \
     libldacBT_abr \
     libldacBT_enc \
     libbluetooth_qti \
@@ -673,7 +674,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # service tracker
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.servicetrackeraidl
+    vendor.qti.hardware.servicetrackeraidl \
+    vendor.qti.hardware.servicetracker@1.0 \
+    vendor.qti.hardware.servicetracker@1.1 \
+    vendor.qti.hardware.servicetracker@1.2 \
+    vendor.qti.hardware.servicetracker@1.0.vendor \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

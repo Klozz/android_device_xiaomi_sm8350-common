@@ -220,5 +220,8 @@ on property:sys.boot_completed=1
     write /sys/block/sde/queue/read_ahead_kb 128
     write /sys/block/sdf/queue/read_ahead_kb 128
 
+    # Optimize vfs cache pressure
+    write /proc/sys/vm/vfs_cache_pressure 50
+
 on property:dalvik.vm.heapstartsize=16
    write /proc/sys/vm/watermark_boost_factor 0

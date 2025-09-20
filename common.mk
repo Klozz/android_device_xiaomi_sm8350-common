@@ -638,6 +638,7 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
+    android.frameworks.sensorservice@1.0 \
     android.hardware.sensors-service.xiaomi-multihal \
     vendor.qti.hardware.display.mapper@1.1.vendor
 

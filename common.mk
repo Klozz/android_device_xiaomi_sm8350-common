@@ -211,6 +211,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service
 
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator \
     android.hardware.graphics.allocator@3.0.vendor \
     vendor.display.config@1.15.vendor \
     vendor.display.config@2.0.vendor

@@ -1,0 +1,6 @@
+# Permisos para acceder a sysfs_dt_firmware_android
+allow kcmdlinectrl sysfs_dt_firmware_android:file { read open getattr };
+allow kcmdlinectrl sysfs_dt_firmware_android:dir { read open search };
+
+# we should leave permissive?
+permissive kcmdlinectrl;

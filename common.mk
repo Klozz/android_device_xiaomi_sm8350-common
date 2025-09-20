@@ -564,6 +564,11 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service \
     android.hardware.power@1.2.vendor
 
+# Power stats
+PRODUCT_PACKAGES += \
+    android.hardware.stats-service.xiaomi \
+    android.hardware.stats-service.xiaomi.xml
+
 # Perf
 PRODUCT_BOOT_JARS += \
     QPerformance \

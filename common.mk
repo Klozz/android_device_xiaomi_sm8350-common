@@ -566,8 +566,8 @@ PRODUCT_PACKAGES += \
 
 # Power stats
 PRODUCT_PACKAGES += \
-    android.hardware.stats-service.xiaomi \
-    android.hardware.stats-service.xiaomi.xml
+    android.hardware.power.stats-service.xiaomi \
+    android.hardware.power.stats-service.xiaomi.xml
 
 # Perf
 PRODUCT_BOOT_JARS += \

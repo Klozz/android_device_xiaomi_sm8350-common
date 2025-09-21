@@ -19,6 +19,11 @@ allow hal_camera_default public_adsprpcd_file:file r_file_perms;
 allowxperm hal_camera_default vendor_xdsp_device:chr_file ioctl { 
     0x5208  # FASTRPC_IOCTL_INVOKE
     0x5204  # FASTRPC_IOCTL_CONTROL  
+    0x5211
+    0x520c
+    0x5206
+    0x5201
 };
 
 allow hal_camera_default vendor_xdsp_device:chr_file rw_file_perms;
+allow hal_camera_default system_data_file:dir search;

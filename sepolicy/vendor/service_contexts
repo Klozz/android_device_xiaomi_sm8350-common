@@ -1,2 +1,4 @@
 # NFC
 #vendor.nxp.nxpnfc_aidl.INxpNfc/default    u:object_r:hal_nfc_service:s0
+# AIDL service context
+android.hardware.power.stats.IPowerStats/xiaomi u:object_r:hal_power_stats_xiaomi_service:s0

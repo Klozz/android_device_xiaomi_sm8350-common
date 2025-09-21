@@ -24,4 +24,5 @@ vendor.xiaomi.hardware.mlipay::IMlipayService                                 u:
 # Sensors
 vendor.xiaomi.hardware.citsensorservice::ICitSensorService                    u:object_r:vendor_hal_citsensorservice_xiaomi_hwservice:s0
 
-android.hardware.stats::IStats/default                           u:object_r:hal_stats_xiaomi_hwservice:s0
+# Xiaomi Power Stats HWService
+android.hardware.power.stats::IPowerStats/xiaomi u:object_r:hal_power_stats_xiaomi_hwservice:s0

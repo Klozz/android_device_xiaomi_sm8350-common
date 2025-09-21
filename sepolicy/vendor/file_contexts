@@ -60,9 +60,28 @@
 /vendor/bin/hw/android\.hardware\.sensors-service\.xiaomi-multihal                                      u:object_r:hal_sensors_default_exec:s0
 /vendor/bin/hw/vendor\.xiaomi\.hardware\.citsensorservice@1\.1-service                                  u:object_r:vendor_hal_citsensorservice_xiaomi_default_exec:s0
 
-# Stats service xiaomi
-/vendor/bin/hw/android\.hardware\.stats-service\.xiaomi u:object_r:hal_stats_xiaomi_exec:s0
-/vendor/etc/init/android\.hardware\.stats-service\.xiaomi\.rc u:object_r:vendor_configs_file:s0
+# Xiaomi Power Stats Service
+/vendor/bin/hw/android\.hardware\.power\.stats-service\.xiaomi u:object_r:hal_power_stats_xiaomi_exec:s0
+/vendor/etc/init/android\.hardware\.power\.stats-service\.xiaomi\.rc u:object_r:vendor_configs_file:s0
+
+# GPU interfaces
+/sys/class/kgsl/kgsl-3d0/gpuclk u:object_r:sysfs_kgsl:s0
+/sys/class/kgsl/kgsl-3d0/gpu_busy_percentage u:object_r:sysfs_kgsl:s0
+/sys/class/kgsl(/.*)? u:object_r:sysfs_kgsl:s0
+
+# Thermal interfaces
+/sys/class/thermal/thermal_zone[0-9]*/temp u:object_r:sysfs_thermal:s0
+
+# Power supply interfaces
+/sys/class/power_supply/battery/capacity u:object_r:vendor_sysfs_battery_supply:s0
+/sys/class/power_supply/battery/current_now u:object_r:vendor_sysfs_battery_supply:s0
+/sys/class/power_supply(/.*)? u:object_r:vendor_sysfs_battery_supply:s0
+
+# CPU frequency interfaces
+/sys/devices/system/cpu/cpu[0-9]*/cpufreq/scaling_cur_freq u:object_r:sysfs_devices_system_cpu:s0
+/sys/devices/system/cpu/cpu[0-9]*/cpufreq(/.*)? u:object_r:sysfs_devices_system_cpu:s0
+
+## Finish power stats
 
 # Touch
 /vendor/bin/hw/vendor\.lineage\.touch@1\.0-service\.xiaomi         u:object_r:hal_xperience_touch_default_exec:s0

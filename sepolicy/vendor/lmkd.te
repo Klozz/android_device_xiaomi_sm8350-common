@@ -1,1 +1,4 @@
 allow lmkd default_android_service:service_manager find;
+
+#Perf
+allow lmkd vendor_hal_perf2_service:service_manager find;

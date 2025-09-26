@@ -1,4 +1,181 @@
 {
+  "AdpfConfig": {
+    "RateConfigs": [
+      {
+        "Name": "REFRESH_60FPS",
+        "PID_On": true,
+        "PID_Po": 1.3,
+        "PID_Pu": 0.3,
+        "PID_I": 0.0,
+        "PID_I_Init": 120,
+        "PID_I_High": 300,
+        "PID_I_Low": -20,
+        "PID_Do": 300.0,
+        "PID_Du": 0.0,
+        "UclampMin_On": true,
+        "UclampMin_Init": 100,
+        "UclampMin_High": 350,
+        "UclampMin_Low": 2,
+        "ReportingRateLimitNs": 200000000,
+        "GpuBoost": false,
+        "HeuristicBoost_On": true,
+        "HBoostOnMissedCycles": 10,
+        "HBoostOffMaxAvgRatio": 4.5,
+        "HBoostOffMissedCycles": 6,
+        "HBoostPidPuFactor": 0.3,
+        "HBoostUclampMin": 500,
+        "SamplingWindow_P": 1,
+        "SamplingWindow_I": 0,
+        "SamplingWindow_D": 1,
+        "TargetTimeFactor": 1.0,
+        "MaxRecordsNum": 300,
+        "LowFrameRateThreshold": 30
+      },
+      {
+        "Name": "REFRESH_90FPS",
+        "PID_On": true,
+        "PID_Po": 1.4,
+        "PID_Pu": 0.4,
+        "PID_I": 0.0,
+        "PID_I_Init": 130,
+        "PID_I_High": 320,
+        "PID_I_Low": -25,
+        "PID_Do": 350.0,
+        "PID_Du": 0.0,
+        "UclampMin_On": true,
+        "UclampMin_Init": 120,
+        "UclampMin_High": 370,
+        "UclampMin_Low": 2,
+        "ReportingRateLimitNs": 125000000,
+        "GpuBoost": true,
+        "HeuristicBoost_On": true,
+        "HBoostOnMissedCycles": 12,
+        "HBoostOffMaxAvgRatio": 4.5,
+        "HBoostOffMissedCycles": 6,
+        "HBoostPidPuFactor": 0.3,
+        "HBoostUclampMin": 550,
+        "SamplingWindow_P": 1,
+        "SamplingWindow_I": 0,
+        "SamplingWindow_D": 1,
+        "TargetTimeFactor": 1.0,
+        "MaxRecordsNum": 300,
+        "LowFrameRateThreshold": 45
+      },
+      {
+        "Name": "REFRESH_120FPS",
+        "PID_On": true,
+        "PID_Po": 1.5,
+        "PID_Pu": 0.5,
+        "PID_I": 0.0,
+        "PID_I_Init": 150,
+        "PID_I_High": 350,
+        "PID_I_Low": -30,
+        "PID_Do": 400.0,
+        "PID_Du": 0.0,
+        "UclampMin_On": true,
+        "UclampMin_Init": 150,
+        "UclampMin_High": 390,
+        "UclampMin_Low": 2,
+        "ReportingRateLimitNs": 83333333,
+        "GpuBoost": true,
+        "HeuristicBoost_On": true,
+        "HBoostOnMissedCycles": 8,
+        "HBoostOffMaxAvgRatio": 4.5,
+        "HBoostOffMissedCycles": 6,
+        "HBoostPidPuFactor": 0.3,
+        "HBoostUclampMin": 600,
+        "SamplingWindow_P": 1,
+        "SamplingWindow_I": 0,
+        "SamplingWindow_D": 1,
+        "TargetTimeFactor": 1.0,
+        "MaxRecordsNum": 300,
+        "LowFrameRateThreshold": 60
+      },
+      {
+        "Name": "GAME_MODE",
+        "PID_On": true,
+        "PID_Po": 1.6,
+        "PID_Pu": 0.6,
+        "PID_I": 0.0,
+        "PID_I_Init": 160,
+        "PID_I_High": 380,
+        "PID_I_Low": -30,
+        "PID_Do": 420.0,
+        "PID_Du": 0.0,
+        "UclampMin_On": true,
+        "UclampMin_Init": 180,
+        "UclampMin_High": 400,
+        "UclampMin_Low": 5,
+        "ReportingRateLimitNs": 83333333,
+        "GpuBoost": true,
+        "HeuristicBoost_On": true,
+        "HBoostOnMissedCycles": 15,
+        "HBoostUclampMin": 650,
+        "SamplingWindow_P": 1,
+        "SamplingWindow_I": 1,
+        "SamplingWindow_D": 1,
+        "TargetTimeFactor": 1.2,
+        "MaxRecordsNum": 500,
+        "LowFrameRateThreshold": 60,
+        "PackageFilter": [
+          "io.chaldeaprjkt.gamespace"
+        ]
+      }
+    ],
+    "PidOffset": [
+      {
+        "type": "SYSTEM",
+        "id": "*",
+        "offset": 0
+      },
+      {
+        "type": "APPLICATION",
+        "id": "com.android.systemui",
+        "offset": 12
+      },
+      {
+        "type": "NATIVE",
+        "id": "surfaceflinger",
+        "offset": 15
+      },
+      {
+        "type": "APPLICATION",
+        "id": "com.tencent.*",
+        "offset": 18
+      },
+      {
+        "type": "APPLICATION",
+        "id": "com.miHoYo.*",
+        "offset": 20
+      },
+      {
+        "type": "APPLICATION",
+        "id": "com.netmarble.*",
+        "offset": 20
+      },
+      {
+        "type": "APPLICATION",
+        "id": "com.activision.*",
+        "offset": 20
+      },
+      {
+        "type": "APPLICATION",
+        "id": "com.netease.*",
+        "offset": 20
+      }
+    ],
+    "UclampMin": {
+      "Foreground": 20,
+      "Background": 0,
+      "SystemBackground": 8,
+      "TopApp": 35
+    },
+    "HintSessionConfig": {
+      "PreferredRate": 16666666,
+      "MinDuration": 3000000,
+      "MaxDuration": 80000000
+    }
+  },
   "Nodes": [
     {
       "Name": "CPULittleClusterMaxFreq",

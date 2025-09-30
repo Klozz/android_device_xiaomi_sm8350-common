@@ -561,6 +561,8 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Power
+$(call soong_config_set,power_libperfmgr,mode_extension_lib,//$(LOCAL_PATH):power-mode-ext)
+
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor \
     android.hardware.power-service.lineage-libperfmgr

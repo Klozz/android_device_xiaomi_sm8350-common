@@ -176,7 +176,6 @@ vendor.gatekeeper.disable_spu=true
 
 # Graphics
 debug.egl.hw=1
-debug.mdpcomp.logs=0
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.early.app.duration=16500000
 debug.sf.early.sf.duration=16000000

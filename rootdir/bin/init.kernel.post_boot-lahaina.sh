@@ -31,46 +31,68 @@
 #=============================================================================
 
 function configure_zram_parameters() {
-	MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-	MemTotal=${MemTotalStr:16:8}
+	# Robust method to get total RAM in KB
+    MemTotal=$(cat /proc/meminfo | grep MemTotal | awk '{print $2}')
 
-	# Zram disk - 75% for Go and < 2GB devices .
-	# For >2GB Non-Go devices, size = 50% of RAM size. Limit the size to 4GB.
-	# And enable lz4 zram compression for Go targets.
+	# If MemTotal can't be read, exit to avoid errors
+    if [ -z "$MemTotal" ]; then
+        echo "Error: Could not read MemTotal." >&2
+        return 1
+    fi
 
-	let RamSizeGB="( $MemTotal / 1048576 ) + 1"
-	diskSizeUnit=M
-	if [ $RamSizeGB -le 2 ]; then
-		let zRamSizeMB="( $RamSizeGB * 1024 ) * 3 / 4"
-	else
-		let zRamSizeMB="( $RamSizeGB * 1024 ) / 2"
-	fi
+    low_ram=$(getprop ro.config.low_ram)
 
-	# use MB avoid 32 bit overflow
-	if [ $zRamSizeMB -gt 4096 ]; then
-		let zRamSizeMB=4096
-	fi
+    # --- ZRAM Size Logic ---
+    # RULE: 75% of total physical RAM (Own Request)
+    # We want to avoid launcher crashes due to low memory
+    # instead of force LMK to do it
+    # (MemTotal_in_KB * 3 / 4) / 1024 = zRamSize in MB
+    let zRamSizeMB="( $MemTotal * 3 / 4 ) / 1024"
+    diskSizeUnit=M
 
+    # We increase the upper limit to 8GB (8192MB).
+    # The old 4096MB limit was too low for the 8GB device.
+    if [ $zRamSizeMB -gt 8192 ]; then
+        let zRamSizeMB=8192
+    fi
+
+     # --- Compression Algorithm Logic ---
+    if [ "$low_ram" == "true" ]; then
+        # lz4 is faster and uses less CPU. Good for "low_ram" devices.
         echo lz4 > /sys/block/zram0/comp_algorithm
+    else
+        # zstd offers a better compression ratio (more effective space)
+        # with reasonable CPU usage. Ideal for 6GB/8GB devices.
+        echo zstd > /sys/block/zram0/comp_algorithm
+    fi
 
-	if [ -f /sys/block/zram0/disksize ]; then
-		if [ -f /sys/block/zram0/use_dedup ]; then
-			echo 1 > /sys/block/zram0/use_dedup
-		fi
-		echo "$zRamSizeMB""$diskSizeUnit" > /sys/block/zram0/disksize
+    # --- Apply ZRAM Configuration ---
+    if [ -f /sys/block/zram0/disksize ]; then
+        # Enable page deduplication (saves more RAM)
+        if [ -f /sys/block/zram0/use_dedup ]; then
+            echo 1 > /sys/block/zram0/use_dedup
+        fi
 
-		# ZRAM may use more memory than it saves if SLAB_STORE_USER
-		# debug option is enabled.
-		if [ -e /sys/kernel/slab/zs_handle ]; then
-			echo 0 > /sys/kernel/slab/zs_handle/store_user
-		fi
-		if [ -e /sys/kernel/slab/zspage ]; then
-			echo 0 > /sys/kernel/slab/zspage/store_user
-		fi
+        # Write the new size
+        echo "$zRamSizeMB""$diskSizeUnit" > /sys/block/zram0/disksize
 
-		mkswap /dev/block/zram0
-		swapon /dev/block/zram0 -p 32758
-	fi
+        # Disable store_user debug (performance improvement)
+        if [ -e /sys/kernel/slab/zs_handle ]; then
+            echo 0 > /sys/kernel/slab/zs_handle/store_user
+        fi
+        if [ -e /sys/kernel/slab/zspage ]; then
+            echo 0 > /sys/kernel/slab/zspage/store_user
+        fi
+
+        # Create the swap and turn it on
+        mkswap /dev/block/zram0
+        swapon /dev/block/zram0 -p 32758
+
+    else
+        echo "Error: /sys/block/zram0/disksize does not exist." >&2
+        return 1
+    fi
+
 }
 
 function configure_read_ahead_kb_values() {

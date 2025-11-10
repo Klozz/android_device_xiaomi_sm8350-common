@@ -1,3 +1,6 @@
 allow vendor_qti_init_shell sysfs:file rw_file_perms;
 
 allow vendor_qti_init_shell sysfs_mem_sleep:file rw_file_perms;
+# For LMKD and AWK
+allow vendor_qti_init_shell vendor_file:file { execute execute_no_trans };
+allow vendor_qti_init_shell system_lmk_prop:property_service set;

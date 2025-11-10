@@ -31,7 +31,7 @@
 #=============================================================================
 
 function configure_zram_parameters() {
-	# Robust method to get total RAM in KB
+	# Robust method to get total RAM in KB. This value is used for both ZRAM and LMKD sizing.
     MemTotal=$(cat /proc/meminfo | grep MemTotal | awk '{print $2}')
 
 	# If MemTotal can't be read, exit to avoid errors
@@ -39,6 +39,29 @@ function configure_zram_parameters() {
         echo "Error: Could not read MemTotal." >&2
         return 1
     fi
+
+    # Dynamic LMKD Configuration (fix for aggressive killing on redwood)
+	# Threshold: 7000000 KB is approximately 7GB.
+	# We assume anything above this is the 8GB variant.
+	if [ "$MemTotal" -gt 7000000 ]; then
+		# 8GB+ Device (Relaxed Profile): More tolerant killing thresholds, protecting background apps longer.
+		# This maximizes ZRAM usage and reduces unnecessary kills.
+		# Values: 18432:0, 18432:100, 20480:200, 23040:250, 35840:900, 46080:950
+		LMK_LEVELS="18432:0,18432:100,20480:200,23040:250,35840:900,46080:950"
+		echo "Applying LMKD (8GB Relaxed Profile) - LMK_LEVELS: $LMK_LEVELS"
+	elif [ "$MemTotal" -gt 5000000 ]; then
+		# 6GB Device (Moderate Profile): Standard thresholds optimized to protect launcher (200/250).
+		# Values: 18432:0, 20480:100, 23040:200, 25600:250, 40960:900, 51200:950
+		LMK_LEVELS="18432:0,20480:100,23040:200,25600:250,40960:900,51200:950"
+		echo "Applying LMKD (6GB Moderate Profile) - LMK_LEVELS: $LMK_LEVELS"
+	else
+		# Fallback for 4GB or lower devices (using the moderate profile for safety)
+		LMK_LEVELS="18432:0,20480:100,23040:200,25600:250,40960:900,51200:950"
+		echo "Applying LMKD (Default Fallback Profile) - LMK_LEVELS: $LMK_LEVELS"
+	fi
+
+	# Set the LMKD property
+	setprop sys.lmk.minfree_levels $LMK_LEVELS
 
     low_ram=$(getprop ro.config.low_ram)
 

@@ -698,6 +698,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Telephony
 PRODUCT_PACKAGES += \
+    xiaomi-telephony-stub \
     ims-ext-common \
     ims_ext_common.xml \
     qti-telephony-hidl-wrapper \

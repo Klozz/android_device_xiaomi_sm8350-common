@@ -2,6 +2,9 @@
 vendor.bluetooth.soc=hastings
 persist.vendor.qcom.bluetooth.soc=hastings
 
+# Camera
+ro.camerax.extensions.enabled=true
+
 # CNE
 persist.vendor.cne.feature=1
 

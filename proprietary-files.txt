@@ -16,10 +16,10 @@ vendor/lib64/libtinycompress.so
 system_ext/etc/permissions/audiosphere.xml
 system_ext/framework/audiosphere.jar
 vendor/lib/soundfx/libasphere.so
-vendor/lib/soundfx/libshoebox.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
+vendor/lib/soundfx/libshoebox.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
@@ -161,9 +161,9 @@ vendor/lib64/hw/consumerir.lahaina.so
 vendor/bin/netmgrd|4254e808131fa3a13aec1474bb769dbd539379ff
 
 # Diag HAL
-vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
 vendor/bin/diag-router
 vendor/etc/init/vendor.qti.diag.rc
+vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
 vendor/lib64/vendor.qti.diaghal@1.0.so;MODULE_SUFFIX=_vendor
 
 # Display - from XQ-BC72 61.2.A.0.410
@@ -220,8 +220,8 @@ vendor/lib64/libclient2slpi.notifier.so
 vendor/lib64/libdisplayfeature.so
 vendor/lib64/libdisplayfeatureservice.so
 vendor/lib64/libmi-stc-HW-modulate.so
-vendor/lib64/libtinyxml.so
 vendor/lib64/libmiXmlParser.so
+vendor/lib64/libtinyxml.so
 vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so;MODULE_SUFFIX=_vendor
 
 # DPM
@@ -323,6 +323,8 @@ vendor/lib/c2.dolby.hevc.dec.so
 vendor/lib/c2.dolby.hevc.enc.so
 vendor/lib/c2.dolby.hevc.sec.dec.so
 vendor/lib/c2.dolby.store.so
+vendor/lib/libcodec2_hidl@1.0.so:vendor/lib/libcodec2_hidl@1.0_vendor.so
+vendor/lib/libcodec2_vndk.so:vendor/lib/libcodec2_vndk_vendor.so
 vendor/lib/libdolbyottcameracontrol.so
 vendor/lib/libdolbyvision.so
 vendor/lib64/c2.dolby.avc.dec.so
@@ -335,8 +337,6 @@ vendor/lib64/c2.dolby.hevc.sec.dec.so
 vendor/lib64/c2.dolby.store.so
 vendor/lib64/libdolbyottcameracontrol.so
 vendor/lib64/libdolbyvision.so
-vendor/lib/libcodec2_vndk.so:vendor/lib/libcodec2_vndk_vendor.so
-vendor/lib/libcodec2_hidl@1.0.so:vendor/lib/libcodec2_hidl@1.0_vendor.so
 
 # Embedded Secure Element power manager
 vendor/bin/hw/vendor.qti.esepowermanager@1.1-service
@@ -394,40 +394,40 @@ vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
+vendor/lib/egl/libVkLayer_ADRENO_qprofiler.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/egl/libq3dtools_esx.so
-vendor/lib/egl/libVkLayer_ADRENO_qprofiler.so
+vendor/lib/libCB.so
+vendor/lib/libOpenCL.so
+vendor/lib/libOpenCL_adreno.so
 vendor/lib/libadreno_app_profiles.so
 vendor/lib/libadreno_compiler_cl.so
 vendor/lib/libadreno_utils.so
-vendor/lib/libCB.so
 vendor/lib/libgsl.so
 vendor/lib/libkcl.so
 vendor/lib/libkernelmanager.so
 vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/libllvm-qgl.so
-vendor/lib/libOpenCL.so
-vendor/lib/libOpenCL_adreno.so
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
 vendor/lib64/egl/libGLESv2_adreno.so
+vendor/lib64/egl/libVkLayer_ADRENO_qprofiler.so
 vendor/lib64/egl/libq3dtools_adreno.so
 vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib64/egl/libVkLayer_ADRENO_qprofiler.so
+vendor/lib64/libCB.so
+vendor/lib64/libOpenCL.so
+vendor/lib64/libOpenCL_adreno.so
 vendor/lib64/libadreno_app_profiles.so
 vendor/lib64/libadreno_compiler_cl.so
 vendor/lib64/libadreno_utils.so
-vendor/lib64/libCB.so
 vendor/lib64/libgsl.so
 vendor/lib64/libkcl.so
 vendor/lib64/libkernelmanager.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libllvm-qgl.so
-vendor/lib64/libOpenCL.so
-vendor/lib64/libOpenCL_adreno.so
 
 # Possible REQUIRED
 vendor/lib/libc2d30_bltlib.so;DISABLE_CHECKELF
@@ -591,33 +591,39 @@ vendor/lib/libsn100u_fw.so:vendor/lib64/libsn100u_fw.so
 vendor/bin/nv_mac
 
 # OMX
+vendor/lib/libstagefright_flacdec.so;MODULE_SUFFIX=_vendor
 vendor/lib/libstagefright_soft_aacdec.so;MODULE_SUFFIX=_vendor
+vendor/lib/libstagefright_soft_aacenc.so;MODULE_SUFFIX=_vendor
 vendor/lib/libstagefright_soft_amrdec.so;MODULE_SUFFIX=_vendor
+vendor/lib/libstagefright_soft_amrnbenc.so;MODULE_SUFFIX=_vendor
+vendor/lib/libstagefright_soft_amrwbenc.so;MODULE_SUFFIX=_vendor
 vendor/lib/libstagefright_soft_flacdec.so;MODULE_SUFFIX=_vendor
+vendor/lib/libstagefright_soft_flacenc.so;MODULE_SUFFIX=_vendor
 vendor/lib/libstagefright_soft_g711dec.so;MODULE_SUFFIX=_vendor
 vendor/lib/libstagefright_soft_gsmdec.so;MODULE_SUFFIX=_vendor
 vendor/lib/libstagefright_soft_mp3dec.so;MODULE_SUFFIX=_vendor
 vendor/lib/libstagefright_soft_opusdec.so;MODULE_SUFFIX=_vendor
 vendor/lib/libstagefright_soft_rawdec.so;MODULE_SUFFIX=_vendor
 vendor/lib/libstagefright_soft_vorbisdec.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_soft_aacenc.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_soft_amrnbenc.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_soft_amrwbenc.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_soft_flacenc.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_flacdec.so;MODULE_SUFFIX=_vendor
 
 # Perf syst
-system_ext/etc/overscrolleroptimization/config.json
+system/etc/permissions/com.qualcomm.qti.Performance.xml|7976f2fd46b8d07814310cc957a70f829bdd6932
+system/etc/permissions/com.qualcomm.qti.UxPerformance.xml|d92749d80c5d956db8251b08ea6388d3f107a32c
+system/framework/QPerformance.jar
+system/framework/QXPerformance.jar
+system/framework/UxPerformance.jar
+system/lib/vendor.qti.hardware.perf2-V1-ndk.so
+system/lib64/vendor.qti.hardware.perf2-V1-ndk.so
 system_ext/bin/perfservice
 system_ext/bin/qspmsvc
 system_ext/etc/init/perfservice.rc
 system_ext/etc/init/qspmsvc.rc
+system_ext/etc/overscrolleroptimization/config.json
 system_ext/etc/perf/wlc_model.tflite
 system_ext/etc/perfinit.conf
 system_ext/etc/perfinit_bdsize_zram.conf
 system_ext/etc/permissions/privapp-permissions-com.qualcomm.qti.performancemode.xml
 system_ext/etc/seccomp_policy/perfservice.policy
-system_ext/lib/libqti-at.so
 system_ext/lib/libbeluga.so
 system_ext/lib/libcomposerextn.qti.so
 system_ext/lib/libdolphin.so
@@ -627,6 +633,7 @@ system_ext/lib/libpenguin_impl.so
 system_ext/lib/libqape.qti.so
 system_ext/lib/libqspm-mem-utils.so
 system_ext/lib/libqspmsvc.so
+system_ext/lib/libqti-at.so
 system_ext/lib/libqti-iopd-client_system.so
 system_ext/lib/libqti-perfd-client_system.so
 system_ext/lib/libqti_performance.so
@@ -667,13 +674,6 @@ system_ext/lib64/vendor.qti.hardware.perf@2.2.so
 system_ext/lib64/vendor.qti.hardware.perf@2.3.so
 system_ext/lib64/vendor.qti.qspmhal-V1-ndk.so
 system_ext/lib64/vendor.qti.qspmhal@1.0.so
-system/etc/permissions/com.qualcomm.qti.Performance.xml|7976f2fd46b8d07814310cc957a70f829bdd6932
-system/etc/permissions/com.qualcomm.qti.UxPerformance.xml|d92749d80c5d956db8251b08ea6388d3f107a32c
-system/lib/vendor.qti.hardware.perf2-V1-ndk.so
-system/lib64/vendor.qti.hardware.perf2-V1-ndk.so
-system/framework/QXPerformance.jar
-system/framework/QPerformance.jar
-system/framework/UxPerformance.jar
 
 # Perf
 vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
@@ -720,12 +720,12 @@ vendor/lib/libqti-iopd-client.so
 vendor/lib/libqti-iopd.so
 vendor/lib/vendor.qti.hardware.iop@1.0.so
 vendor/lib/vendor.qti.hardware.iop@2.0.so;MODULE_SUFFIX=_vendor
-vendor/lib64/libpasrutils.so
 vendor/lib64/libadaptlaunch.so
 vendor/lib64/libappclassifier.so
 vendor/lib64/liblmutils-ns.so
 vendor/lib64/libmemperfd.so
 vendor/lib64/libmeters-ns.so
+vendor/lib64/libpasrutils.so
 vendor/lib64/libprekill.so
 vendor/lib64/libqti-iopd-client.so
 vendor/lib64/libqti-iopd.so

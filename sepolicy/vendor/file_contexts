@@ -23,6 +23,7 @@
 # This is labeled as public_adsprpcd_file as it needs to be read by apps
 # (e.g. Google Camera App)
 /mnt/vendor/dsp/fastrpc_shell_3                                         u:object_r:public_adsprpcd_file:s0
+#/dev/adsprpc-smd-secure    u:object_r:vendor_xdsp_device:s0
 
 # Init
 /(vendor|system/vendor)/bin/init\.xiaomi_sm8350\.sh u:object_r:vendor_qti_init_shell_exec:s0

@@ -4,6 +4,7 @@ persist.vendor.qcom.bluetooth.soc=hastings
 
 # Camera
 ro.camerax.extensions.enabled=true
+vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,us.zoom.videomeetings
 
 # CNE
 persist.vendor.cne.feature=1
@@ -28,6 +29,7 @@ ro.feas.enable=true
 # Graphics
 debug.sf.disable_backpressure=1
 debug.sf.enable_hwc_vds=1
+ro.config.avoid_gfx_accel=false
 
 # Log
 persist.log.tag.ACDB-LOADER=S
@@ -68,6 +70,9 @@ media.stagefright.enable-scan=true
 persist.mm.enable.prefetch=true
 ro.media.recorder-max-base-layer-fps=60
 vendor.mm.enable.qcom_parser=16777215
+
+# Multi-gen LRU
+persist.device_config.mglru_native.lru_gen_config=core
 
 # NFC
 ro.nfc.port=I2C

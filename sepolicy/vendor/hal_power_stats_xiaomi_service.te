@@ -3,3 +3,5 @@
 
 # AIDL service type for Xiaomi Power Stats
 type hal_power_stats_xiaomi_service, service_manager_type;
+
+allow hal_power_stats_xiaomi hal_power_stats_service:service_manager add;

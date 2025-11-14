@@ -2,3 +2,6 @@ allow untrusted_app vendor_diag_device:chr_file rw_file_perms;
 
 # Allow apps to connect to zygote sockets
 allow untrusted_app zygote:unix_stream_socket { getopt connect };
+
+# Telegram dies of cringe without this shit and api 1 never gets called
+allow untrusted_app media_rw_data_file:file { relabelfrom relabelto };

@@ -21,7 +21,7 @@ $(call inherit-product, vendor/xiaomi/sm8350-common/sm8350-common-vendor.mk)
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 $(call set-device-specific-path,WLAN,wlan,hardware/qcom-caf/wlan)
 
-PRODUCT_EXTRA_VNDK_VERSIONS := 30 31 32 33
+PRODUCT_EXTRA_VNDK_VERSIONS := 31 32 33
 
 # Setup dalvik vm configs
 PRODUCT_VENDOR_PROPERTIES += \

@@ -181,7 +181,7 @@ BOOT_SECURITY_PATCH := $(VENDOR_SECURITY_PATCH)
 
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
-include packages/apps/GameBar/sepolicy/SEPolicy.mk
+#include packages/apps/GameBar/sepolicy/SEPolicy.mk
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public

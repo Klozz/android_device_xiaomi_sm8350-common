@@ -394,19 +394,6 @@ PRODUCT_PACKAGES += \
 
 $(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
 
-# LMK
-PRODUCT_SYSTEM_PROPERTIES += \
-    ro.lmk.critical_upgrade=true \
-    ro.lmk.downgrade_pressure=60 \
-    ro.lmk.filecache_min_kb=153600  \
-    ro.lmk.kill_heaviest_task=false \
-    ro.lmk.kill_timeout_ms=100 \
-    ro.lmk.stall_limit_critical=40 \
-    ro.lmk.thrashing_limit=30 \
-    ro.lmk.thrashing_limit_decay=50 \
-    ro.lmk.upgrade_pressure=40 \
-    ro.lmk.use_minfree_levels=true
-
 # Logging
 SPAMMY_LOG_TAGS := \
     MiStcImpl \
@@ -576,13 +563,19 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Power
-$(call soong_config_set,power_libperfmgr,mode_extension_lib,//$(LOCAL_PATH):power-mode-ext)
+#$(call soong_config_set,power_libperfmgr,mode_extension_lib,//$(LOCAL_PATH):power-mode-ext)
 
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2.vendor \
-    android.hardware.power-service.lineage-libperfmgr
+    android.hardware.power@1.2.vendor
+
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service-qti
 
 PRODUCT_COPY_FILES += \
+    vendor/qcom/opensource/power/config/lahaina/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
+
+#PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Power stats

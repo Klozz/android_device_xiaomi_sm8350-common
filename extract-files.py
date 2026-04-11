@@ -89,6 +89,7 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib/libcodec2_hidl@1.0_vendor.so',
      ): blob_fixup()
         .add_needed('libbase_shim.so'),
+        .add_needed('dolbycodec2_shim.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

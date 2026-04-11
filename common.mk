@@ -586,7 +586,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Power stats
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     android.hardware.power.stats-service.xiaomi \
     android.hardware.power.stats-service.xiaomi.xml
 

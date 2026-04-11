@@ -566,10 +566,12 @@ ndk::ScopedAStatus Stats::getEnergyMeterInfo(std::vector<Channel>* _aidl_return)
  * @param[out] _aidl_return Vector of EnergyMeasurement data
  * @return ndk::ScopedAStatus OK with empty list
  */
-ndk::ScopedAStatus Stats::readEnergyMeter(const std::vector<int32_t>& in_channelIds,
+ndk::ScopedAStatus Stats::readEnergyMeter([[maybe_unused]] const std::vector<int32_t>& in_channelIds,
                                          std::vector<EnergyMeasurement>* _aidl_return) {
     // Return empty list - energy meter not implemented
-    *_aidl_return = {};
+    if (_aidl_return) {
+        _aidl_return->clear();
+    }
     return ndk::ScopedAStatus::ok();
 }
 

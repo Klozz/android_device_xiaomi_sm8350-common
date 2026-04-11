@@ -184,6 +184,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
+# codecs
+PRODUCT_PACKAGES += \
+    libstagefright_flacdec \
+    libstagefright_flacdec.vendor
+
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
@@ -217,7 +222,8 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator \
     android.hardware.graphics.allocator@3.0.vendor \
     vendor.display.config@1.15.vendor \
-    vendor.display.config@2.0.vendor
+    vendor.display.config@2.0.vendor \
+    vendor.xiaomi.hardware.displayfeature@1.0.vendor
 
 PRODUCT_PACKAGES += \
     libdisplayconfig.qti \

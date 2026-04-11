@@ -6,3 +6,5 @@ type vendor_hal_poweroptservice_hwservice, hwservice_manager_type, protected_hws
 
 # dpmd
 #type vendor_hal_diaghal_hwservice, hwservice_manager_type, protected_hwservice;
+
+type hal_xperience_fastcharge_hwservice, hwservice_manager_type;

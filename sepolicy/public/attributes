@@ -4,3 +4,6 @@ attribute hal_mlipay_server;
 attribute vendor_hal_displayfeature_xiaomi;
 attribute vendor_hal_displayfeature_xiaomi_client;
 attribute vendor_hal_displayfeature_xiaomi_server;
+attribute hal_xperience_fastcharge;
+attribute hal_xperience_fastcharge_client;
+attribute hal_xperience_fastcharge_server;

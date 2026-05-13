@@ -54,9 +54,6 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
-# Camera
-TARGET_CAMERA_PACKAGE_NAME := com.android.camera
-
 # Display
 TARGET_SCREEN_DENSITY ?= 440
 

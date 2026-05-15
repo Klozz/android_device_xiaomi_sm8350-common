@@ -1,9 +1,11 @@
 cc_library_static {
-    name: "power-mode-ext",
-    srcs: ["power-mode.cpp"],
+    name: "libpowermode-ext-xiaomi",
+    defaults: ["android.hardware.power-ndk_shared"],
     vendor: true,
+    srcs: [
+        "power-mode.cpp",
+    ],
     shared_libs: [
         "libbase",
-        "android.hardware.power-V6-ndk",
     ],
 }

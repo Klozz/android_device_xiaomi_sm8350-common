@@ -157,7 +157,8 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Camera
 $(call soong_config_set_bool,camera,override_format_from_reserved,true)
-$(call soong_config_set,camera,com.android.camera)
+#$(call soong_config_set,camera,com.android.camera)
+$(call soong_config_set,camera,package_name,com.android.camera)
 $(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
 
 PRODUCT_PACKAGES += \
@@ -270,10 +271,6 @@ PRODUCT_PACKAGES += \
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
-
-# Fastcharge
-PRODUCT_PACKAGES += \
-    vendor.lineage.fastcharge@1.0-service.xiaomi_sm8350
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -704,7 +701,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/xiaomi \
-    hardware/xperience/interfaces/power-libperfmgr
+    hardware/lineage/interfaces/power-libperfmgr
 
 # Telephony
 PRODUCT_PACKAGES += \

@@ -12,4 +12,3 @@ allow vendor_hal_perf_default vendor_msm_irqbalance_prop:property_service set;
 
 allow vendor_hal_perf_default device:file { read open getattr };
 allow vendor_perfservice default_android_service:service_manager find;
-allow mediaserver vendor_hal_perf2_service:service_manager { find add };
